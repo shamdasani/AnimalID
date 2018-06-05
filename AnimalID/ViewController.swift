@@ -15,11 +15,12 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     
     let identifierLabel: UILabel = {
         let label = UILabel()
-        label.backgroundColor = .white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
+    
+    let background = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,11 +46,18 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     }
     
     fileprivate func setupIdentifierConfidenceLabel() {
-        view.addSubview(identifierLabel)
-        identifierLabel.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        identifierLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
-        identifierLabel.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        identifierLabel.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        background.translatesAutoresizingMaskIntoConstraints = false
+        background.addSubview(identifierLabel)
+        identifierLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: 10).isActive = true
+        identifierLabel.leftAnchor.constraint(equalTo: background.leftAnchor, constant: 10).isActive = true
+        identifierLabel.rightAnchor.constraint(equalTo: background.rightAnchor, constant: 10).isActive = true
+        identifierLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 10).isActive = true
+        view.addSubview(background)
+        background.contentMode = .scaleToFill
+        background.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        background.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        background.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        background.layer.cornerRadius = 5
     }
     
     
