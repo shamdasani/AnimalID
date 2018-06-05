@@ -14,6 +14,7 @@
 		A30B566A20C71D230096DCA3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A30B566820C71D230096DCA3 /* LaunchScreen.storyboard */; };
 		A30B567520C71D240096DCA3 /* AnimalIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30B567420C71D240096DCA3 /* AnimalIDTests.swift */; };
 		A30B568020C71D240096DCA3 /* AnimalIDUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A30B567F20C71D240096DCA3 /* AnimalIDUITests.swift */; };
+		A30B568E20C71D520096DCA3 /* ImageClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = A30B568D20C71D520096DCA3 /* ImageClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		A30B567B20C71D240096DCA3 /* AnimalIDUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimalIDUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30B567F20C71D240096DCA3 /* AnimalIDUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalIDUITests.swift; sourceTree = "<group>"; };
 		A30B568120C71D240096DCA3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A30B568D20C71D520096DCA3 /* ImageClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = ImageClassifier.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			children = (
 				A30B565F20C71D210096DCA3 /* AppDelegate.swift */,
 				A30B566120C71D210096DCA3 /* ViewController.swift */,
+				A30B568D20C71D520096DCA3 /* ImageClassifier.mlmodel */,
 				A30B566320C71D210096DCA3 /* Main.storyboard */,
 				A30B566620C71D230096DCA3 /* Assets.xcassets */,
 				A30B566820C71D230096DCA3 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A30B566220C71D210096DCA3 /* ViewController.swift in Sources */,
+				A30B568E20C71D520096DCA3 /* ImageClassifier.mlmodel in Sources */,
 				A30B566020C71D210096DCA3 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,7 +443,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shamdasani.AnimalID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -457,7 +461,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = shamdasani.AnimalID;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
