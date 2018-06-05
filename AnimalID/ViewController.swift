@@ -16,6 +16,7 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     let identifierLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -48,16 +49,17 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
     fileprivate func setupIdentifierConfidenceLabel() {
         background.translatesAutoresizingMaskIntoConstraints = false
         background.addSubview(identifierLabel)
-        identifierLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: 10).isActive = true
-        identifierLabel.leftAnchor.constraint(equalTo: background.leftAnchor, constant: 10).isActive = true
-        identifierLabel.rightAnchor.constraint(equalTo: background.rightAnchor, constant: 10).isActive = true
-        identifierLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 10).isActive = true
+        identifierLabel.bottomAnchor.constraint(equalTo: background.bottomAnchor, constant: -15).isActive = true
+        identifierLabel.leftAnchor.constraint(equalTo: background.leftAnchor, constant: 15).isActive = true
+        identifierLabel.rightAnchor.constraint(equalTo: background.rightAnchor, constant: -15).isActive = true
+        identifierLabel.topAnchor.constraint(equalTo: background.topAnchor, constant: 15).isActive = true
         view.addSubview(background)
         background.contentMode = .scaleToFill
-        background.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -20).isActive = true
+        background.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -30).isActive = true
         background.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        background.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.5)
+        background.backgroundColor = UIColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 0.7)
         background.layer.cornerRadius = 5
+        background.isHidden = true
     }
     
     
@@ -74,9 +76,10 @@ class ViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDele
             guard let firstObservation = results.first else { return }
             
             print(firstObservation.identifier, firstObservation.confidence)
-            
+
             DispatchQueue.main.async {
-                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100) %"
+                self.background.isHidden = false
+                self.identifierLabel.text = "\(firstObservation.identifier) \(firstObservation.confidence * 100)%"
             }
             
         }
